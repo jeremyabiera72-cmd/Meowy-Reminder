@@ -1,0 +1,1035 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.page__header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.page__eyebrow {
+    margin: 0 0 6px;
+
+    color: #777777;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.page__title {
+    margin: 0;
+
+    color: #111111;
+
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.page__description {
+    margin: 8px 0 0;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+.page__button {
+    padding: 10px 15px;
+
+    background: #111111;
+    color: #ffffff;
+
+    border: 1px solid #111111;
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: 13px;
+}
+
+.page__button:hover {
+    background: #ffffff;
+    color: #111111;
+}
+
+.page__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.page__grid--three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.page__stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.page__text {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.page__empty {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.page__empty p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 14px;
+}
+
+.insight-value {
+    margin-bottom: 4px;
+
+    color: #111111;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.insight-value + p {
+    margin: 0;
+
+    color: #777777;
+
+    font-size: 13px;
+}
+
+.settings-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.settings-row strong {
+    color: #111111;
+
+    font-size: 14px;
+}
+
+.settings-row p {
+    margin: 5px 0 0;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+.reminder-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.reminder-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.reminder-item:first-child {
+    padding-top: 0;
+}
+
+.reminder-item:last-child {
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+.reminder-item strong {
+    font-size: 14px;
+}
+
+.reminder-item p {
+    margin: 5px 0 0;
+
+    color: #777777;
+
+    font-size: 12px;
+}
+
+.reminder-item button {
+    padding: 7px 10px;
+
+    margin-left: 6px;
+
+    background: #ffffff;
+    color: #111111;
+
+    border: 1px solid #111111;
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: 11px;
+}
+
+@media (max-width: 750px) {
+    .page__grid,
+    .page__grid--three {
+        grid-template-columns: 1fr;
+    }
+
+    .page__header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .settings-row,
+    .page__empty {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page__title {
+        font-size: 26px;
+    }
+}
+
+/* =========================================================
+   Symptom History
+   ========================================================= */
+
+.symptom-history {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+/* =========================================================
+   History Entry
+   ========================================================= */
+
+.symptom-history__entry {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.symptom-history__entry:first-child {
+    padding-top: 4px;
+}
+
+.symptom-history__entry:last-child {
+    padding-bottom: 4px;
+
+    border-bottom: none;
+}
+
+/* =========================================================
+   Date
+   ========================================================= */
+
+.symptom-history__date {
+    display: flex;
+    align-items: center;
+}
+
+.symptom-history__date-label {
+    color: #4f4843;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* =========================================================
+   Symptom Tags
+   ========================================================= */
+
+.symptom-history__symptoms {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.symptom-history__tag {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 34px;
+
+    padding: 7px 12px;
+
+    box-sizing: border-box;
+
+    background: #f4ece7;
+    color: #68564d;
+
+    border: 1px solid #e3d7d0;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+/* =========================================================
+   No Symptoms
+   ========================================================= */
+
+.symptom-history__none {
+    margin: 0;
+
+    color: #9a928d;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   Note
+   ========================================================= */
+
+.symptom-history__note {
+    padding: 12px 14px;
+
+    background: #faf8f6;
+
+    border-left: 3px solid #cdb8aa;
+    border-radius: 8px;
+}
+
+.symptom-history__note span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #8d817a;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.symptom-history__note p {
+    margin: 0;
+
+    color: #665e59;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+
+.symptom-history__empty {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 28px 10px;
+
+    text-align: center;
+}
+
+.symptom-history__empty-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    margin-bottom: 10px;
+
+    background: #f4eeea;
+    color: #927a6c;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.symptom-history__empty p {
+    margin: 0 0 5px;
+
+    color: #514a46;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.symptom-history__empty span {
+    color: #99918c;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 520px) {
+    .symptom-history__entry {
+        gap: 11px;
+
+        padding: 18px 0;
+    }
+
+    .symptom-history__date-label {
+        font-size: 14px;
+    }
+
+    .symptom-history__tag {
+        min-height: 35px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .symptom-history__note {
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   Delete Tracking Data Button
+   ========================================================= */
+
+.page__button--danger {
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+}
+
+.page__button--danger:hover {
+    background: #b91c1c;
+    border-color: #b91c1c;
+}
+
+/* =========================================================
+   Symptom History
+   ========================================================= */
+
+.symptom-history {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+/* =========================================================
+   History Entry
+   ========================================================= */
+
+.symptom-history__entry {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.symptom-history__entry:first-child {
+    padding-top: 4px;
+}
+
+.symptom-history__entry:last-child {
+    padding-bottom: 4px;
+
+    border-bottom: none;
+}
+
+/* =========================================================
+   History Header
+   ========================================================= */
+
+.symptom-history__header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+/* =========================================================
+   Date
+   ========================================================= */
+
+.symptom-history__date {
+    display: block;
+
+    color: #403934;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.symptom-history__date-short {
+    display: none;
+
+    color: #8d8580;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   Individual Delete Button
+   ========================================================= */
+
+.symptom-history__delete {
+    flex-shrink: 0;
+
+    min-height: 34px;
+
+    padding: 7px 12px;
+
+    background: #ffffff;
+    color: #b42318;
+
+    border: 1px solid #f0c5c1;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.symptom-history__delete:hover {
+    background: #fef2f2;
+    border-color: #dc2626;
+    color: #b91c1c;
+}
+
+.symptom-history__delete:active {
+    transform: scale(0.97);
+}
+
+/* =========================================================
+   Symptom Tags
+   ========================================================= */
+
+.symptom-history__symptoms {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.symptom-history__tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    padding: 8px 13px;
+
+    box-sizing: border-box;
+
+    background: #f4ece7;
+    color: #68564d;
+
+    border: 1px solid #e3d7d0;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+/* =========================================================
+   No Symptoms
+   ========================================================= */
+
+.symptom-history__none {
+    margin: 0;
+
+    color: #9a928d;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   Note
+   ========================================================= */
+
+.symptom-history__note {
+    padding: 12px 14px;
+
+    background: #faf8f6;
+
+    border-left: 3px solid #cdb8aa;
+    border-radius: 8px;
+}
+
+.symptom-history__note span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8d817a;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.symptom-history__note p {
+    margin: 0;
+
+    color: #665e59;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+
+.symptom-history__empty {
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 32px 10px;
+
+    text-align: center;
+}
+
+.symptom-history__empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 12px;
+
+    background: #f4eeea;
+    color: #927a6c;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.symptom-history__empty p {
+    margin: 0 0 5px;
+
+    color: #514a46;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.symptom-history__empty span {
+    color: #99918c;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 520px) {
+    .symptom-history__entry {
+        gap: 12px;
+
+        padding: 18px 0;
+    }
+
+    .symptom-history__header {
+        align-items: flex-start;
+    }
+
+    .symptom-history__date {
+        font-size: 14px;
+    }
+
+    .symptom-history__delete {
+        min-height: 32px;
+
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+
+    .symptom-history__tag {
+        min-height: 35px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .symptom-history__note {
+        padding: 12px;
+    }
+}
+
+/* =========================================================
+   Delete Tracking Data Button
+   ========================================================= */
+
+.page__button--danger {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.page__button--danger:hover {
+    background: #ffffff;
+    border-color: #000000;
+}
+
+/* =========================================================
+   Symptom History
+   ========================================================= */
+
+.symptom-history {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+}
+
+/* =========================================================
+   History Entry
+   ========================================================= */
+
+.symptom-history__entry {
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.symptom-history__entry:first-child {
+    padding-top: 4px;
+}
+
+.symptom-history__entry:last-child {
+    padding-bottom: 4px;
+
+    border-bottom: none;
+}
+
+/* =========================================================
+   History Header
+   ========================================================= */
+
+.symptom-history__header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 16px;
+}
+
+/* =========================================================
+   Date
+   ========================================================= */
+
+.symptom-history__date {
+    display: block;
+
+    color: #403934;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.symptom-history__date-short {
+    display: none;
+
+    color: #8d8580;
+
+    font-size: 11px;
+}
+
+/* =========================================================
+   Individual Delete Button
+   ========================================================= */
+
+.symptom-history__delete {
+    flex-shrink: 0;
+
+    min-height: 34px;
+
+    padding: 7px 12px;
+
+    background: #ffffff;
+    color: #b42318;
+
+    border: 1px solid #f0c5c1;
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.15s ease,
+        border-color 0.15s ease,
+        color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.symptom-history__delete:hover {
+    background: #fef2f2;
+    border-color: #dc2626;
+    color: #b91c1c;
+}
+
+.symptom-history__delete:active {
+    transform: scale(0.97);
+}
+
+/* =========================================================
+   Symptom Tags
+   ========================================================= */
+
+.symptom-history__symptoms {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.symptom-history__tag {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-height: 34px;
+
+    padding: 8px 13px;
+
+    box-sizing: border-box;
+
+    background: #f4ece7;
+    color: #68564d;
+
+    border: 1px solid #e3d7d0;
+    border-radius: 999px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    line-height: 1;
+}
+
+/* =========================================================
+   No Symptoms
+   ========================================================= */
+
+.symptom-history__none {
+    margin: 0;
+
+    color: #9a928d;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   Note
+   ========================================================= */
+
+.symptom-history__note {
+    padding: 12px 14px;
+
+    background: #faf8f6;
+
+    border-left: 3px solid #cdb8aa;
+    border-radius: 8px;
+}
+
+.symptom-history__note span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8d817a;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.symptom-history__note p {
+    margin: 0;
+
+    color: #665e59;
+
+    font-size: 12px;
+
+    line-height: 1.55;
+}
+
+/* =========================================================
+   Empty State
+   ========================================================= */
+
+.symptom-history__empty {
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: column;
+
+    padding: 32px 10px;
+
+    text-align: center;
+}
+
+.symptom-history__empty-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 12px;
+
+    background: #f4eeea;
+    color: #927a6c;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.symptom-history__empty p {
+    margin: 0 0 5px;
+
+    color: #514a46;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.symptom-history__empty span {
+    color: #99918c;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 520px) {
+    .symptom-history__entry {
+        gap: 12px;
+
+        padding: 18px 0;
+    }
+
+    .symptom-history__header {
+        align-items: flex-start;
+    }
+
+    .symptom-history__date {
+        font-size: 14px;
+    }
+
+    .symptom-history__delete {
+        min-height: 32px;
+
+        padding: 6px 10px;
+
+        font-size: 10px;
+    }
+
+    .symptom-history__tag {
+        min-height: 35px;
+
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+    .symptom-history__note {
+        padding: 12px;
+    }
+}

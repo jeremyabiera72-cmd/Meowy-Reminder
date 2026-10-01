@@ -1,0 +1,257 @@
+.common-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111111;
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease,
+        border-color 160ms ease,
+        transform 160ms ease;
+}
+
+.common-button:active {
+    transform: scale(0.97);
+}
+
+.common-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.common-button--small {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 12px;
+}
+
+.common-button--medium {
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+}
+
+.common-button--large {
+    min-height: 46px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+.common-button--primary {
+    background: #111111;
+    color: #ffffff;
+}
+
+.common-button--primary:hover:not(:disabled) {
+    background: #2a2a2a;
+}
+
+.common-button--secondary {
+    background: #ffffff;
+    color: #111111;
+}
+
+.common-button--secondary:hover:not(:disabled) {
+    background: #f5f5f5;
+}
+
+.common-button--danger {
+    border-color: #111111;
+    background: #111111;
+    color: #ffffff;
+}
+
+.common-button--danger:hover:not(:disabled) {
+    background: #333333;
+}
+
+.common-button--ghost {
+    border-color: transparent;
+    background: transparent;
+    color: #111111;
+}
+
+.common-button--ghost:hover:not(:disabled) {
+    border-color: #e5e5e5;
+    background: #f5f5f5;
+}
+
+/* Card */
+
+.common-card {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 16px;
+    background: #ffffff;
+}
+
+.common-card__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px 20px 0;
+}
+
+.common-card__title {
+    margin: 0;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.common-card__description {
+    margin: 5px 0 0;
+    color: #777777;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.common-card__action {
+    flex-shrink: 0;
+}
+
+.common-card__content {
+    padding: 20px;
+}
+
+/* Modal */
+
+.common-modal__backdrop {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgb(0 0 0 / 35%);
+}
+
+.common-modal {
+    width: 100%;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    border: 1px solid #111111;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 15%);
+}
+
+.common-modal--small {
+    max-width: 400px;
+}
+
+.common-modal--medium {
+    max-width: 520px;
+}
+
+.common-modal--large {
+    max-width: 720px;
+}
+
+.common-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.common-modal__title {
+    margin: 0;
+    color: #111111;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.common-modal__close {
+    display: flex;
+    width: 34px;
+    height: 34px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #111111;
+    border-radius: 9px;
+    background: #ffffff;
+    color: #111111;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 20px;
+    line-height: 1;
+    transition:
+        background-color 160ms ease,
+        color 160ms ease;
+}
+
+.common-modal__close:hover {
+    background: #111111;
+    color: #ffffff;
+}
+
+.common-modal__content {
+    padding: 20px;
+}
+
+.common-modal__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 16px 20px;
+    border-top: 1px solid #eeeeee;
+}
+
+/* Loading */
+
+.common-loading {
+    display: flex;
+    min-height: 160px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.common-loading__spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #dddddd;
+    border-top-color: #111111;
+    border-radius: 50%;
+    animation: common-spin 700ms linear infinite;
+}
+
+.common-loading__message {
+    color: #666666;
+    font-size: 13px;
+}
+
+@keyframes common-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 640px) {
+    .common-modal__backdrop {
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    .common-modal {
+        max-height: calc(100vh - 20px);
+        border-radius: 18px 18px 14px 14px;
+    }
+
+    .common-card__header {
+        flex-direction: column;
+    }
+
+    .common-card__action {
+        width: 100%;
+    }
+}

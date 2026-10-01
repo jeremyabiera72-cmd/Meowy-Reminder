@@ -1,0 +1,547 @@
+/* =========================================================
+   MEOWY REMINDER — SYMPTOM TRACKER
+   Mobile-first comfortable UI
+   ========================================================= */
+
+.symptom-tracker {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+
+.symptom-tracker__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 16px;
+
+    margin-bottom: 24px;
+}
+
+.symptom-tracker__header h3 {
+    margin: 0 0 6px;
+
+    color: #242424;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.symptom-tracker__header p {
+    margin: 0;
+
+    max-width: 240px;
+
+    color: #8a8581;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   Clear Button
+   ========================================================= */
+
+.symptom-tracker__clear {
+    flex-shrink: 0;
+
+    min-height: 38px;
+
+    padding: 8px 14px;
+
+    background: #ffffff;
+    color: #77716d;
+
+    border: 1px solid #e5e0dc;
+    border-radius: 11px;
+
+    cursor: pointer;
+
+    font: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.symptom-tracker__clear:hover {
+    background: #f9f6f4;
+
+    border-color: #d6cec8;
+
+    color: #3f3a37;
+}
+
+.symptom-tracker__clear:active {
+    transform: scale(0.95);
+}
+
+/* =========================================================
+   Symptom Categories
+   ========================================================= */
+
+.symptom-list {
+    display: flex;
+    flex-direction: column;
+
+    gap: 28px;
+
+    width: 100%;
+}
+
+.symptom-list__category {
+    width: 100%;
+}
+
+/* =========================================================
+   Category Header
+   ========================================================= */
+
+.symptom-list__category-title {
+    display: flex;
+    align-items: center;
+
+    margin: 0 0 12px;
+
+    color: #756c67;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+}
+
+.symptom-list__category-title::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    margin-left: 12px;
+
+    background: #ebe6e2;
+}
+
+/* =========================================================
+   Symptom Grid
+   ========================================================= */
+
+.symptom-list__items {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 10px;
+
+    width: 100%;
+}
+
+/* =========================================================
+   Symptom Button
+   ========================================================= */
+
+.symptom-item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 52px;
+
+    padding: 11px 13px;
+
+    box-sizing: border-box;
+
+    background: #faf8f6;
+    color: #403b38;
+
+    border: 1px solid #e8e2de;
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font: inherit;
+    text-align: left;
+
+    transition:
+        background-color 0.18s ease,
+        border-color 0.18s ease,
+        box-shadow 0.18s ease,
+        transform 0.15s ease;
+}
+
+/* =========================================================
+   Hover
+   ========================================================= */
+
+.symptom-item:hover {
+    background: #ffffff;
+
+    border-color: #d9d0ca;
+
+    box-shadow: 0 4px 12px rgba(50, 40, 35, 0.06);
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   Press
+   ========================================================= */
+
+.symptom-item:active {
+    transform: scale(0.97);
+}
+
+/* =========================================================
+   Dot
+   ========================================================= */
+
+.symptom-item__dot {
+    width: 10px;
+    height: 10px;
+
+    margin-right: 10px;
+
+    flex-shrink: 0;
+
+    background: #d2cbc6;
+
+    border-radius: 50%;
+
+    transition:
+        background-color 0.18s ease,
+        transform 0.18s ease;
+}
+
+/* =========================================================
+   Symptom Name
+   ========================================================= */
+
+.symptom-item__name {
+    flex: 1;
+
+    min-width: 0;
+
+    color: inherit;
+
+    font-size: 13px;
+    font-weight: 550;
+
+    line-height: 1.3;
+}
+
+/* =========================================================
+   Check
+   ========================================================= */
+
+.symptom-item__check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 22px;
+    height: 22px;
+
+    margin-left: 8px;
+
+    flex-shrink: 0;
+
+    background: transparent;
+
+    color: transparent;
+
+    border-radius: 50%;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    transition:
+        background-color 0.18s ease,
+        color 0.18s ease,
+        transform 0.18s ease;
+}
+
+/* =========================================================
+   Selected
+   ========================================================= */
+
+.symptom-item--selected {
+    background: #f1e7e1;
+
+    color: #3d332e;
+
+    border-color: #cdb9ad;
+
+    box-shadow: 0 4px 12px rgba(80, 55, 40, 0.08);
+}
+
+.symptom-item--selected:hover {
+    background: #eee2db;
+
+    border-color: #c4ada0;
+}
+
+.symptom-item--selected .symptom-item__dot {
+    background: #876a5c;
+
+    transform: scale(1.15);
+}
+
+.symptom-item--selected .symptom-item__check {
+    background: #876a5c;
+
+    color: #ffffff;
+
+    transform: scale(1);
+}
+
+/* =========================================================
+   Notes
+   ========================================================= */
+
+.symptom-tracker__note {
+    margin-top: 30px;
+}
+
+.symptom-tracker__note label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #403a36;
+
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.symptom-tracker__note textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 120px;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: #faf8f6;
+
+    color: #302c29;
+
+    border: 1px solid #e5dfdb;
+    border-radius: 14px;
+
+    outline: none;
+
+    resize: vertical;
+
+    font: inherit;
+    font-size: 14px;
+    line-height: 1.55;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.symptom-tracker__note textarea::placeholder {
+    color: #aaa29d;
+}
+
+.symptom-tracker__note textarea:hover {
+    background: #ffffff;
+
+    border-color: #d5ccc6;
+}
+
+.symptom-tracker__note textarea:focus {
+    background: #ffffff;
+
+    border-color: #bca79a;
+
+    box-shadow: 0 0 0 4px rgba(135, 106, 92, 0.08);
+}
+
+/* =========================================================
+   Character Counter
+   ========================================================= */
+
+.symptom-tracker__counter {
+    margin-top: 6px;
+
+    color: #a39b96;
+
+    font-size: 11px;
+
+    text-align: right;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.symptom-tracker__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+
+    margin-top: 24px;
+    padding-top: 18px;
+
+    border-top: 1px solid #ebe7e4;
+}
+
+.symptom-tracker__footer > span {
+    color: #8d8580;
+
+    font-size: 12px;
+}
+
+/* =========================================================
+   Focus
+   ========================================================= */
+
+.symptom-item:focus-visible,
+.symptom-tracker__clear:focus-visible {
+    outline: 3px solid rgba(135, 106, 92, 0.2);
+
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 520px) {
+    .symptom-tracker__header {
+        margin-bottom: 26px;
+    }
+
+    .symptom-tracker__header h3 {
+        font-size: 20px;
+    }
+
+    .symptom-tracker__header p {
+        font-size: 13px;
+    }
+
+    .symptom-list {
+        gap: 30px;
+    }
+
+    .symptom-list__category-title {
+        margin-bottom: 12px;
+
+        font-size: 11px;
+    }
+
+    .symptom-list__items {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+    .symptom-item {
+        min-height: 54px;
+
+        padding: 12px 14px;
+
+        border-radius: 15px;
+    }
+
+    .symptom-item__dot {
+        width: 10px;
+        height: 10px;
+
+        margin-right: 11px;
+    }
+
+    .symptom-item__name {
+        font-size: 14px;
+    }
+
+    .symptom-item__check {
+        width: 23px;
+        height: 23px;
+
+        font-size: 12px;
+    }
+
+    .symptom-tracker__note {
+        margin-top: 32px;
+    }
+
+    .symptom-tracker__note label {
+        font-size: 13px;
+    }
+
+    .symptom-tracker__note textarea {
+        min-height: 130px;
+
+        padding: 15px;
+
+        border-radius: 15px;
+
+        font-size: 14px;
+    }
+
+    .symptom-tracker__footer {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+}
+
+/* =========================================================
+   Small Phones
+   ========================================================= */
+
+@media (max-width: 380px) {
+    .symptom-tracker__header {
+        gap: 12px;
+    }
+
+    .symptom-tracker__header h3 {
+        font-size: 19px;
+    }
+
+    .symptom-tracker__header p {
+        font-size: 12px;
+    }
+
+    .symptom-tracker__clear {
+        min-height: 36px;
+
+        padding: 7px 11px;
+
+        font-size: 11px;
+    }
+
+    .symptom-item {
+        min-height: 52px;
+    }
+
+    .symptom-item__name {
+        font-size: 13px;
+    }
+}

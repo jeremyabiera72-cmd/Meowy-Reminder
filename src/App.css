@@ -1,0 +1,59 @@
+#root {
+    min-height: 100vh;
+}
+
+.route-loading {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+.route-page {
+    width: 100%;
+    max-width: 440px;
+
+    margin: 0 auto;
+}
+
+.route-page h1 {
+    margin: 0 0 8px;
+
+    color: #111111;
+
+    font-size: 24px;
+}
+
+.route-page p {
+    margin: 0;
+
+    color: #666666;
+
+    font-size: 14px;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+a:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+}
+
+::selection {
+    background: #111111;
+    color: #ffffff;
+}
